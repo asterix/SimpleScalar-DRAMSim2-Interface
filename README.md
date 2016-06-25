@@ -15,4 +15,28 @@ Compile simply by typing ```make or make DEBUG=1``` in this directory and the in
 ###Step 2:
 Now that we have the linkable library with the interface in it, we simply need to link this to SimpleScalar during executable build. However, you'll first need to make the necessary changes to SimpleScalar to use the library effectively. This involves placing the startup, tick update calls and DRAM access (read and write) during regular access and cache misses in SimpleScalar. This should by itself be pretty straightforward.
 
+For example:
+
+You would add the below code at the end of ```sim-outorder.c```
+```
+     /* go to next cycle */
+      sim_cycle++;
+ 
+      /* Clock DRAM */
+      if(DRAMSim_On)
+      {
+        /* CPU clock runs three times faster than DRAM clock */
+        if(sim_cycle % 3 == 0) dram_clock();
+      }
+
+      /* finish early? */
+      if (max_insts && sim_num_insn >= max_insts)
+      {
+        dramifc_destroy_dramsim_object();
+	      return;
+      }
+    }
+
+    dramifc_destroy_dramsim_object();
+```
 Once done, include the ```dramsim.a or dramsim.so``` to SimpleScalar and you should be all set to use DRAMSim2 with it.
