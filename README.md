@@ -40,3 +40,8 @@ You would add the below code at the end of ```sim-outorder.c```
     dramifc_destroy_dramsim_object();
 ```
 Once done, include the ```dramsim.a or dramsim.so``` to SimpleScalar and you should be all set to use DRAMSim2 with it.
+
+
+# Copyrights
+
+SimpleScalar is a property of SimpleScalar LLC and is used here for academic purposes only.
