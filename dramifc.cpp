@@ -27,7 +27,7 @@ Created:   20-Nov-2014
 #include "dramifc.h"
 #include "PrintMacros.h"
 
-int SHOW_SIM_OUTPUT = false;
+//int SHOW_SIM_OUTPUT = false;
 
 extern float tCK;
 
