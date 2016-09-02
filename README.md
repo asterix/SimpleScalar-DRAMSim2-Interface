@@ -63,6 +63,10 @@ MLIBS  = `./sysprobe -libs` -lm -ldramsim
 ```
 Once done, include the ```libdramsim.a or libdramsim.so``` to SimpleScalar and you should be all set to use DRAMSim2 with it.
 
+# Adapting SimpleScalar for integration
+
+
+
 # Copyrights
 
 SimpleScalar is a property of SimpleScalar LLC and is used here for academic purposes only.
