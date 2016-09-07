@@ -67,6 +67,7 @@ Once done, include the ```libdramsim.a or libdramsim.so``` to SimpleScalar and y
 
 
 
+
 # Copyrights
 
 SimpleScalar is a property of SimpleScalar LLC and is used here for academic purposes only.
